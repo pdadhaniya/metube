@@ -44,6 +44,9 @@ class VideosController < ApplicationController
 
   #destroy an existing video - DELETE /videos/:id
   def destroy
+    @video = Video.find(params[:id])
+    @video.delete
+    redirect_to '/'
   end
 
   private
