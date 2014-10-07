@@ -7,10 +7,12 @@ class VideosController < ApplicationController
 
   #show a single video - GET /videos/:id
   def show
+    @video = Video.find(params[:id])
   end
 
   #new video creation form - Get /videos/new
   def new
+    @video = Video.new
   end
 
   #create a new video - POST /videos

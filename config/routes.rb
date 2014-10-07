@@ -3,6 +3,11 @@ Rails.application.routes.draw do
   get '/videos' => 'videos#index'
 
   root 'videos#index'
+  
+  get '/videos/new' => 'videos#new'
+
+  get '/videos/:id' => 'videos#show'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
