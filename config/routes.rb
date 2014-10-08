@@ -3,6 +3,11 @@ Rails.application.routes.draw do
   resources :videos
 
   root 'videos#index'
+
+  resources :playlists
+
+  root 'playlists#index'
+  
   # get '/videos' => 'videos#index'
 
   # get '/videos/new' => 'videos#new'
