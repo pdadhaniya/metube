@@ -28,19 +28,31 @@ class PlaylistsController < ApplicationController
 
   #edit playlist form - GET /playlists/:id/edit
   def edit
+    @playlist = Playlist.find(params[:id])
   end
 
   #update an existing playlist - PUT /playlists/:id
   def update
+    @playlist = Playlist.find(params[:id])
+
+    if @playlist.update(playlist_params)
+      redirect_to @playlist
+    else
+      render :edit
+    end
   end
 
   #destroy an existing playlist - DELETE /playlists/:id
   def destroy
+    @playlist = Playlist.find(params[:id])
+    @playlist.delete
+    redirect_to '/'
   end
 
   private
   def playlist_params
     params.require(:playlist).permit(:title, :author_id)
   end
+
 
 end
