@@ -1,3 +1,12 @@
+<p><%= link_to 'Add Song to Playlist!', '/' %></p>
+
 <p><%= @playlist.title %> by <%= @playlist.author.name %>. <%= link_to("Delete", '/playlists/'+@playlist.id.to_s, method: :delete) %></p>
 
+<ul>
+  <% @playlist.videos.each do |video| %>
+  <li><%= video.title %></li>
+  <% end %>
+</ul>
+
+<p><%= link_to 'See all Videos!', '/' %></p>
 <p><%= link_to 'See All Playlists!', '/playlists' %></p>

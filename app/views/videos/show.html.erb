@@ -1,3 +1,10 @@
-<p><%= @video.title %> by <%= @video.author.name %>. <%= link_to 'Watch Video!', @video.url%>. <%= link_to("Delete", '/videos/'+@video.id.to_s, method: :delete) %></p>
+<p>
+  <%= @video.title %> by <%= @video.author.name %>. <%= link_to 'Watch Video!', @video.url%>. <%= link_to("Delete", '/videos/'+@video.id.to_s, method: :delete) %><br>
+
+</p>
 
 <p><%= link_to 'See All Videos!', '/' %></p>
+<p><%= link_to 'See All Playlists!', '/playlists' %></p>
+ 
+
+
