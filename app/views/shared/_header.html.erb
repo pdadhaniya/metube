@@ -5,4 +5,17 @@
     </li>
     <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
   </ul>
+
+  <% if user_signed_in? %>
+    <li>
+      <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+    </li>
+
+  <% else %>
+  
+    <li>
+    <%= link_to('Login', new_user_session_path)  %>  
+    </li>
+
+  <% end %>
 </nav>
