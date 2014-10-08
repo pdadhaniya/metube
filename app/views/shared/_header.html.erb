@@ -6,16 +6,36 @@
     <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
   </ul>
 
+
+  <div class="login-logout right">
+    <% if user_signed_in? %>
+      <ul class="title-area">
+        <li class="name">
+          <h1><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></h1>
+        </li>
+      </ul>
+
+    <% else %>
+    
+      <ul class="title-area">
+        <li class="name">
+          <h1><%= link_to('Login', new_user_session_path)  %></h1>
+        </li>
+      </ul>
+    <% end %>
+  </div>
+
   <% if user_signed_in? %>
-    <li>
-      <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-    </li>
-
+    <ul class="title-area right">
+      <li class="name">
+        <h1><a href="#"><%= current_user.name %></a></h1>
+      </li>
+    </ul>
   <% else %>
-  
-    <li>
-    <%= link_to('Login', new_user_session_path)  %>  
-    </li>
-
+    <ul class="title-area right">
+      <li class="name">
+        <h1><a href="#">Not Logged In!</a></h1>
+      </li>
+    </ul>
   <% end %>
 </nav>
