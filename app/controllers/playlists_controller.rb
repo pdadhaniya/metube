@@ -46,7 +46,7 @@ class PlaylistsController < ApplicationController
   def destroy
     @playlist = Playlist.find(params[:id])
     @playlist.delete
-    redirect_to '/'
+    redirect_to '/playlists'
   end
 
   private
