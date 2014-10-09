@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true
   has_many :videos, foreign_key: "author_id"
   has_many :playlists, foreign_key: "author_id"
+  has_many :comments
 end

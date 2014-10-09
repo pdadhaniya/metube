@@ -4,4 +4,5 @@ class Video < ActiveRecord::Base
   validates :url, uniqueness: true
   has_many :video_playlists
   has_many :playlists, through: :video_playlists
+  has_many :comments, as: :commentable
 end
