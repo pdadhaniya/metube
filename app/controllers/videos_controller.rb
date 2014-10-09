@@ -9,6 +9,7 @@ class VideosController < ApplicationController
   def show
     @video = Video.find(params[:id])
     @videoplaylist = VideoPlaylist.new
+    @comment = @video.comments.new
   end
 
   #new video creation form - Get /videos/new
