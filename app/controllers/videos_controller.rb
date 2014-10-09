@@ -8,6 +8,7 @@ class VideosController < ApplicationController
   #show a single video - GET /videos/:id
   def show
     @video = Video.find(params[:id])
+    @videoplaylist = VideoPlaylist.new
   end
 
   #new video creation form - Get /videos/new
@@ -24,6 +25,15 @@ class VideosController < ApplicationController
     else
       render :new
     end
+  end
+
+  #add video to playlist - POST /videos/:id/playlist
+  def add_to_playlist
+    # binding.pry
+    @p = Playlist.find(params[:playlist][:id])
+    @v = Video.find(params[:id])
+    @p.videos << @v
+    redirect_to @v
   end
 
   #edit video form - GET /videos/:id/edit

@@ -1,6 +1,13 @@
 <p>
   <%= @video.title %> by <%= @video.author.name %>. <%= link_to 'Watch Video!', @video.url%>. <%= link_to("Delete", '/videos/'+@video.id.to_s, method: :delete) %><br>
 
+  <div class="savetoPlaylist">
+    Save to Playlist!
+    <%= form_tag ('/videos/'+@video.id.to_s+'/playlist'), method: "post" do %>
+      <%= collection_select(:playlist, :id, Playlist.all, :id, :title)%>
+      <%= submit_tag("Submit") %>
+    <% end %>
+  </div>
 </p>
 
 <p><%= link_to 'See All Videos!', '/' %></p>
