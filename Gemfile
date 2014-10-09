@@ -43,3 +43,7 @@ gem 'pry-byebug'
 gem 'foundation-rails'
 
 gem 'devise'
+
+gem 'figaro'
+
+gem 'rest-client'

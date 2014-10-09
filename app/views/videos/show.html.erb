@@ -1,7 +1,7 @@
 <div class="left large-4 columns">
   <p>
-    <%= @video.title %> by <%= @video.author.name %>. <br><%= link_to 'Watch Video!', @video.url%> <%= link_to("Delete", '/videos/'+@video.id.to_s, method: :delete) %><br>
-
+    <%= @video.title %> by <%= @video.author.name %>. <br> <%= link_to("Delete", '/videos/'+@video.id.to_s, method: :delete) %><br>
+    <iframe width="560" height="315" src="http://www.youtube.com/embed/<%=@video.url%>" frameborder="0" allowfullscreen></iframe>
 
     <div class="addComment">
     Add Comment!

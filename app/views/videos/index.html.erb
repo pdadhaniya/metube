@@ -2,7 +2,7 @@
   <h1>Videos!</h1>
   <ul>
     <% @videos.each do |video| %>
-    <li><%= video.title %> by <%= (video.author).name %>. <br><%= link_to 'View Here!', video.url %> <%= link_to 'See Details!', '/videos/'+video.id.to_s%> <%= link_to("Delete", '/videos/'+video.id.to_s, method: :delete) %><br></li>
+    <li><%= video.title %> by <%= (video.author).name %>. <iframe width="560" height="315" src="http://www.youtube.com/embed/<%=video.url%>" frameborder="0" allowfullscreen></iframe><br><%= link_to 'See Details!', '/videos/'+video.id.to_s%> <%= link_to("Delete", '/videos/'+video.id.to_s, method: :delete) %><br><br></li>
     <% end %>
   </ul>
 
