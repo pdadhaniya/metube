@@ -4,7 +4,7 @@
 
 <ul>
   <% @playlist.videos.each do |video| %>
-  <li><%= video.title %></li>
+  <li><%= link_to video.title, '/videos/'+video.id.to_s %></li>
   <% end %>
 </ul>
 

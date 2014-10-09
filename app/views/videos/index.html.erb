@@ -1,11 +1,15 @@
-<ul>
-  <% @videos.each do |video| %>
-  <li><%= video.title %> by <%= (video.author).name %>. <br><%= link_to 'View Here!', video.url %> <%= link_to 'See Details!', '/videos/'+video.id.to_s%> <%= link_to("Delete", '/videos/'+video.id.to_s, method: :delete) %><br></li>
-  <% end %>
-</ul>
+<div class="left large-4 columns">
+  <h1>Videos!</h1>
+  <ul>
+    <% @videos.each do |video| %>
+    <li><%= video.title %> by <%= (video.author).name %>. <br><%= link_to 'View Here!', video.url %> <%= link_to 'See Details!', '/videos/'+video.id.to_s%> <%= link_to("Delete", '/videos/'+video.id.to_s, method: :delete) %><br></li>
+    <% end %>
+  </ul>
 
 
-<%= render "videos/feed", :videos => @videos %>
 
-<p><%= link_to 'Add Video!', '/videos/new' %></p>
-<p><%= link_to 'Playlists!', '/playlists' %></p>
+  <p><%= link_to 'Add Video!', '/videos/new' %></p>
+  <p><%= link_to 'Playlists!', '/playlists' %></p>
+</div>
+
+  <%= render "videos/feed", :videos => @videos %>

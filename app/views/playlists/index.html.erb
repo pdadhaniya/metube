@@ -2,7 +2,7 @@
 
 <ul>
   <% @playlists.each do |playlist| %>
-  <li><%= playlist.title %> by <%= (playlist.author).name %>.<%= link_to 'See Details!', '/playlists/'+playlist.id.to_s%> <%= link_to("Delete", '/playlists/'+playlist.id.to_s, method: :delete) %></li>
+  <li><%= playlist.title %> by <%= (playlist.author).name %>.<br><%= link_to 'See Details!', '/playlists/'+playlist.id.to_s%> <%= link_to("Delete", '/playlists/'+playlist.id.to_s, method: :delete) %></li>
   <% end %>
 </ul>
 
