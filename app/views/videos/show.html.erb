@@ -3,14 +3,17 @@
     <%= @video.title %> by <%= @video.author.name %>. <br> <%= link_to("Delete", '/videos/'+@video.id.to_s, method: :delete) %><br>
     <iframe width="560" height="315" src="http://www.youtube.com/embed/<%=@video.url%>" frameborder="0" allowfullscreen></iframe>
     View Count: <%= @comma %>
-    <div class="addComment">
-    Add Comment!
-    <%= form_for [@video, @comment] do |f| %>
-      Comment: <%= f.text_field :body %><br>
 
-      <%= f.submit %>
-    <% end %>
-    <br>
+    <div class="addComment">
+    
+      Add Comment!
+      <%= form_for [@video, @comment] do |f| %>
+        Comment: <%= f.text_field :body %><br>
+
+        <%= f.submit %>
+      <% end %>
+      <br>
+    
     </div>
 
 

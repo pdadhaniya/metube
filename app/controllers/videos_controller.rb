@@ -40,6 +40,7 @@ class VideosController < ApplicationController
     redirect_to @v
   end
 
+
   #edit video form - GET /videos/:id/edit
   def edit
     @video = Video.find(params[:id])
