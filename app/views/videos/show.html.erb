@@ -1,8 +1,10 @@
 <div class="left large-4 columns">
   <p>
-    <%= @video.title %> by <%= @video.author.name %>. <br> <%= link_to("Delete", '/videos/'+@video.id.to_s, method: :delete) %><br>
+    <%= @video.title %> by <%= @video.author.name %> <br> <%= link_to("Delete", '/videos/'+@video.id.to_s, method: :delete) %><br>
     <iframe width="560" height="315" src="http://www.youtube.com/embed/<%=@video.url%>" frameborder="0" allowfullscreen></iframe>
     View Count: <%= @comma %>
+
+    <%= render "shared/comments" %>
 
     <div class="addComment">
     
@@ -30,8 +32,6 @@
     </div>
   </p>
 
-  <p><%= link_to 'See All Videos!', '/' %></p>
-  <p><%= link_to 'See All Playlists!', '/playlists' %></p>
 </div>
 
 
