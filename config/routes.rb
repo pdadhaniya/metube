@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   post '/videos/:id/playlist' => 'videos#add_to_playlist'
 
+
   # get '/videos' => 'videos#index'
 
   # get '/videos/new' => 'videos#new'

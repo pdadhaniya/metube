@@ -47,3 +47,5 @@ gem 'devise'
 gem 'figaro'
 
 gem 'rest-client'
+
+gem 'httparty'

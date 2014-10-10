@@ -1,11 +1,28 @@
-<nav class="top-bar" data-topbar>
+<nav class="top-bar" data-topbar role="navigation">
   <ul class="title-area">
     <li class="name">
-      <h1><a href="/">Metube</a></h1>
+      <h1><a href="/">MooseTube</a></h1>
     </li>
     <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
   </ul>
 
+  <section class="top-bar-section">
+    <ul class="left">
+      <li class="name">
+        <%= link_to 'Playlists!', '/playlists' %>
+      </li>
+    </ul>
+    <ul class="left">
+      <li class="name">
+        <%= link_to 'Videos!', '/' %>
+      </li>
+    </ul>
+    <ul class="left">
+      <li class="name">
+        <%= link_to 'Add Video!', '/videos/new' %>
+      </li>
+    </ul>
+  </section>
 
   <div class="login-logout right">
     <% if user_signed_in? %>
