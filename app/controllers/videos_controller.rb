@@ -11,7 +11,7 @@ class VideosController < ApplicationController
     @videoplaylist = VideoPlaylist.new
     @comment = @video.comments.new
     @comments = @video.comments.all
-    @response = HTTParty.get('https://www.googleapis.com/youtube/v3/videos?id='+@video.url+'&key=AIzaSyAHM-Cc0FHWjJvgAVY4ifs_858FdqnHR6M&part=snippet,contentDetails,statistics,status')
+    @response = HTTParty.get('https://www.googleapis.com/youtube/v3/videos?id='+@video.url+'&key=#{youtube_api_key}&part=snippet,contentDetails,statistics,status')
     viewCount = @response['items'][0]['statistics']['viewCount'].to_i
     @comma = Video.separate_comma(viewCount)
   end
